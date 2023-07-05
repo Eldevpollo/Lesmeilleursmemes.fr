@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+@font-face {
+    font-family: Ubuntu;
+    src: url(./imagesvid/Ubuntu-Regular.ttf);
+}
+
+/* tout mettre a 0
+* {
+  margin: 0;
+  padding: 0;
+
+} */
+
+body{
+   font-family: "Ubuntu", sans-serif;
+   background: url(./imagesvid/Gigachad.jpg) center/cover;
+   /* VH = 100% de la taille de l'écran */
+   min-height: 100vh;
+}
+
+h1{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  color: white;
+  /* taille des polices en rem */
+  font-size: 10vw;
+  text-shadow: 3px -3px 7px #0000006b;
+  font-family: 'Russo One', sans-serif;
+}
+
+
+main {
+  min-height: 500px;
+  width: 90%; 
+  background: rgba(245, 245, 220, 0.603);
+  /* centrer une boite */
+  margin: 0 auto;
+  border: 2px solid rgba(250, 180, 50, 0.859);
+  border-radius: 10px ;
+  box-shadow: 4px -3px 8px 3px rgba(250, 180, 50, 0.859) ;
+  padding: 15px ;
+}
+
+
+h2 {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.flexbox,
+.grid,
+.absolute {
+  border: 2px solid skyblue;
+  border-radius: 18px;
+  padding: 10px;
+  margin-top: 20px;
+  min-height: 150px;
+}
+/* flexbox */
+/* Sert à repartir équitablement dee éléments de la page */
+.flexbox ul {
+padding: 0;
+display: flex;
+justify-content: space-evenly;
+
+}
+
+
+ 
+
+
+
+
+
+.flexbox li {
+  list-style: none;
+  height: 160px;
+  width: 160px;
+  margin: 10px;
+  background: #fab432db;
+  /* Centrer un élément horizon et vertical */
+  display: flex;
+  justify-content: center;
+  /* align-items: center;  si on veut aligner au centre */
+}
+
+/* GRID */
+.grid-container {
+display: grid;
+grid-template-columns: 38% 62%;
+}
+
+
+.grid img {
+height:400px ;
+margin: 20px auto;
+display: block;
+}
+
+form {
+  display: grid;
+  grid-template-columns: lfr lfr ;
+  grid-template-rows: lfr lfr lfr;
+  grid-template-areas:
+  "i1 i2"
+  "ta ta"
+  "vi bt";
+}
+input, textarea {
+  margin: 5px;
+  border: 1px solid skyblue ;
+  width: 300px;
+  padding: 10px;
+  font-size: 1.1rem ;
+  font-family: "Ubuntu";
+ border-radius: 5px;
+}
+
+
+
+textarea {
+grid-area: ta;
+height: 200px;
+width: 95%;
+resize: none;
+}
+
+#btn-submit {
+   grid-area: bt;
+   cursor: pointer;
+   background: skyblue;
+   transition: 0.2s;
+  }
+
+
+#btn-submit:hover {
+  background: yellowgreen;
+  color: white;
+}
+
+/* ABSOLUTE */
+.absolute {
+ position: relative;
+}
+
+
+
+#circle1 {
+  height: 80px;
+  width: 80px;
+  background: skyblue;
+  position: absolute;
+  border-radius: 150px;
+  top: -20px;
+  right: -20px;
+}
+
+#circle2 {
+height: 40px;
+width: 40px;
+border-radius: 150px;
+background: turquoise;
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+top: 100px;
+}
+
+
+/* RESPONSIVE */
+@media screen and (max-width:900px) {
+  .grid-container{
+    display: block;
+  }
+  .grid-container img {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width:610px) {
+  .flexbox ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  form {
+   grid-template-columns: lfr;
+   grid-template-rows: lfr;
+  grid-template-areas:
+  "i1"
+  "i2" 
+  "ta"
+  "bt";
+  }
+  input,
+  textarea {
+    font-size: 0.8rem;
+
+  }
+}
